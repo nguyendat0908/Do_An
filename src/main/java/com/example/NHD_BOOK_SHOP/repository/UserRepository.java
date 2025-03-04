@@ -10,4 +10,5 @@ import com.example.NHD_BOOK_SHOP.domain.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, UUID> {
     
+    boolean existsByEmail(String email);
 }

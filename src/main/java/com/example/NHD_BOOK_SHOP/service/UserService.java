@@ -26,7 +26,7 @@ public class UserService {
     // Lấy người dùng bằng id
     public User handleGetUserById(UUID id) {
         Optional<User> opUser = this.userRepository.findById(id);
-        if (opUser != null) {
+        if (opUser.isPresent()) {
             return opUser.get();
         }
         return null;
@@ -54,5 +54,10 @@ public class UserService {
     // Xóa người dùng
     public void handleDeleteUser(UUID id) {
         this.userRepository.deleteById(id);
+    }
+
+    // Kiểm tra người dùng có tồn tại bằng email
+    public boolean handleCheckUserByEmail(String email) {
+        return this.userRepository.existsByEmail(email);
     }
 }
