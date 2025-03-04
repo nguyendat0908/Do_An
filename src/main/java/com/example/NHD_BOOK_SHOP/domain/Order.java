@@ -1,7 +1,7 @@
 package com.example.NHD_BOOK_SHOP.domain;
 
 import java.time.Instant;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -41,8 +41,7 @@ public class Order {
     private String receiver_phone;
     private double shipping_price;
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private Date order_date;
+    private LocalDateTime order_date;
 
     @Enumerated(EnumType.STRING)
     private OrderStatusEnum status;

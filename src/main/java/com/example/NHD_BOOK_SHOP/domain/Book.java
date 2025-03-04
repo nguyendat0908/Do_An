@@ -1,7 +1,7 @@
 package com.example.NHD_BOOK_SHOP.domain;
 
 import java.time.Instant;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -57,8 +57,7 @@ public class Book {
     @Enumerated(EnumType.STRING)
     private TypeNameEnum book_type;
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private Date publication;
+    private LocalDateTime publication;
 
     private String image;
 

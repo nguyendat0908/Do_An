@@ -1,7 +1,7 @@
 package com.example.NHD_BOOK_SHOP.domain;
 
 import java.time.Instant;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -44,12 +44,10 @@ public class Discount {
     private double min_order_value;
 
     // Ngày bắt đầu áp dụng
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private Date start_date;
+    private LocalDateTime start_date;
 
     // Ngày kết thúc
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private Date end_date;
+    private LocalDateTime end_date;
 
     // Số lượng cho phép sử dụng tối đa
     private int usage_limit;
